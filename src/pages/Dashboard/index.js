@@ -17,7 +17,7 @@ import {Styleds} from './styled';
 import listFood from './listFood.json'; // dado local. Iria usar o do db, mas o tempo não permitiu
 
 const PageDashboard = (props) => {
-    const [dataRaw] = useState(listFood);
+    const [dataInitial] = useState(listFood);
     const [data, setData] = useState(listFood);
 
     const onSignOut = () => {
@@ -25,7 +25,7 @@ const PageDashboard = (props) => {
     };
 
     const onChangeFilter = (event)=>{
-        const dataNew = searchFilter(event.target.value, dataRaw);
+        const dataNew = searchFilter(event.target.value, dataInitial);
         setData(dataNew);
     };
 
